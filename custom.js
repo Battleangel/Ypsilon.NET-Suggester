@@ -18,7 +18,7 @@ $(function() {
                     response(cache[ term ]);
                     return;
                 }
-                $.getJSON('/suggest.php?' + collectParams(field), request, function(data, status, xhr) {
+                $.getJSON('suggest.php?' + collectParams(field), request, function(data, status, xhr) {
                     cache[ term ] = data;
                     response(data);
                 });

@@ -1,7 +1,6 @@
 <?php
 
-$bEnableAPC = false;
-
+$bEnableAPC = true;
 $locales = filter_input(INPUT_GET,'locales',FILTER_SANITIZE_STRING);
 //$locales = $_REQUEST['locales'];
 $term =  filter_input(INPUT_GET,'term',FILTER_SANITIZE_STRING);
