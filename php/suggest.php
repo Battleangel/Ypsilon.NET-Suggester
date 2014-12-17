@@ -1,27 +1,30 @@
 <?php
 
-$bEnableAPC = true;
-$locales = filter_input(INPUT_GET,'locales',FILTER_SANITIZE_STRING);
+$bEnableAPC = true; // disable APC cache global
 
+// Cleanup GET Variable to prevent Xsite Scripting
+$locales = filter_input(INPUT_GET,'locales',FILTER_SANITIZE_STRING);
 $term =  filter_input(INPUT_GET,'term',FILTER_SANITIZE_STRING);
 
+// index use for APC Cache
 $sApcIdx = 'yps_suggest_'.$locales.'_'.$term;
 if($bEnableAPC) {
-    if(function_exists('apc_fetch')) {     
+    if(function_exists('apc_fetch')) {   // Read from APC Cache if enabled
         $success = false;    
-        $ret[0] = apc_fetch($sApcIdx,$success);
+        $res = apc_fetch($sApcIdx,$success);
         if($success === true) {        
-            echo $ret[0];
+            echo $res;
             exit;
         }
     }
 }
 
+// Get JSON Results from Ypsilon.NET GEO Database
 $res = file_get_contents('http://flweb.ypsilon.net/suggest.php?filterGeoRailway=1&locales='.$locales.'&term='.$term);
 echo $res;
 
 flush();
-if($bEnableAPC) {
+if($bEnableAPC) { // Store into APC Cache if Enabled
     if(function_exists('apc_store')) {
         apc_store($sApcIdx,$res,3600);
     }
