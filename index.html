@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Daniel Reinhard (dr@ypsilon.net)">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Ypsilon.NET Suggester Example v2.0</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        <link href="css/dynamic.css" rel="stylesheet" type="text/css">
+        <script src="custom.js"></script>
+    </head>
+    <body>        
+        <form method="POST" autocomplete="off" action="http://flweb.ypsilon.net/index.phtml/fluegecomama">        <!-- change your Ypsilon.NTE Agency here //-->                
+            <input type="hidden" name="debug" value="0" > <!-- disable for production //-->            
+            
+            <input type="hidden" name="AorK" value="K" > <!-- leaf to K //-->
+            
+            
+                        
+            <input type="hidden" name="pax" value="2" >
+            <input type="hidden" name="pax_chd" value="0" >
+            <input type="hidden" name="pax_inf" value="0" >
+            
+            <input type="hidden" name="tarif_klasse" value="N"> <!-- N = Eco //-->
+            
+            <input type="hidden" name="onewayswitch" value="0"> <!-- 0 = RoundTriop 1 = Oneway //-->
+            
+            <input type="hidden" name="only_avail" value="Y"> <!-- Y = Jump direct to Pricelist //-->
+            
+            <input type="text" autocomplete="off" name="depApt" id="depApt">
+            <input type="hidden" name="from" id="depApt_hidden" value="">
+            <input type="hidden" id="depApt_locales" value="de_DE">
+            <input type="hidden" id="depApt_railsearch" value="N">
+            
+            <input type="text" autocomplete="off" name="dstApt" id="dstApt">
+            <input type="hidden" name="to" id="dstApt_hidden" value="">
+            <input type="hidden" id="dstApt_locales" value="de_DE">
+            <input type="hidden" id="dstApt_railsearch" value="N">
+            
+            <input type="submit"  name="submit">
+        </form>
+    </body> 
+</html>
