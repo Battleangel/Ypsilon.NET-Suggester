@@ -1,0 +1,55 @@
+dp-highlight .ui-state-default {
+    background: #484;
+    color: #FFF;
+}
+
+.ui-widget-header {
+    border: 0px solid #AAA;
+    background: #FFFFFF;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+html, body, h1, h2, h3, h4, h5, h6, button, input, select, textarea {
+    font-family: "Open Sans",sans-serif !important;
+}
+html, body {
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+}
+
+.ui-state-default {
+    border: 0px solid #D3D3D3 !important;
+    background: #FFFFFF !important;
+    font-weight: normal !important;
+    color: #555 !important;
+    text-align: center !important;
+}
+.ui-state-active {
+   background-color:#459905 !important;
+    background: linear-gradient(to bottom, #73BB1B 0%,#459905 100%) !important;
+    border-radius:2px !important;
+    color: #FFFFFF !important; 
+    text-align: center !important;
+}
+.ui-state-hover {
+    background-color:#459905 !important;
+    background: linear-gradient(to bottom, #73BB1B 0%,#459905 100%) !important;
+    border-radius:2px !important;
+    color: #FFFFFF !important; 
+    text-align: center !important;
+    
+}
+.ui-state-range{
+    border: 0px solid #D3D3D3 !important;
+    background: #daedbf !important;
+    font-weight: normal !important;
+    color: #555 !important;
+    text-align: center !important;
+}
+.ui-datepicker-row-break-info {
+    height: 20px;
+    font-size: 12px !important;
+    text-align: center;
+}
