@@ -15,7 +15,7 @@
         changeMonth: false,
         changeYear: false,
         minDate: +2,
-        
+        maxDate: "+365d",
         onClose: function(selectedDate) {
             $("#datepicker2").datepicker("option", "minDate", selectedDate );
             $("#datepicker2").datepicker("show");
@@ -26,7 +26,7 @@
     });
     var storeSelDate = function(oDate,idDay,idMonthYear) {
         
-        console.log(oDate);
+        //console.log(oDate);
         
         var selDay = oDate.getDate();
         var selMonth = oDate.getMonth()+1;
@@ -43,6 +43,7 @@
         dateFormat: 'dd.mm.yy',
         changeMonth: false,
         changeYear: false,
+        maxDate: "+365d",
         onClose: function( selectedDate ) {
             $( "#datepicker1" ).datepicker( "option", "maxDate", selectedDate );
             storeSelDate($(this).datepicker( 'getDate' ),'#RetDay','#month_2');
