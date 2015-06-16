@@ -36,7 +36,7 @@
         $(idMonthYear).val(selMonth+'-'+selYear);
     };
     $("#datepicker2" ).datepicker({
-        defaultDate: "+20d",
+        defaultDate: "+1d",
         changeMonth: true,
         numberOfMonths: 2,
         showAnim: '',
