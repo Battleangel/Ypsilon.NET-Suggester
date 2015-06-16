@@ -22,12 +22,14 @@
         }
     });
     var storeSelDate = function(oDate,idDay,idMonthYear) {        
-        var selDay = oDate.getDate();
-        var selMonth = oDate.getMonth()+1;
-        var selYear  = oDate.getFullYear();
+        if(oDate !== null && oDate !== undefined) {
+            var selDay = oDate.getDate();
+            var selMonth = oDate.getMonth()+1;
+            var selYear  = oDate.getFullYear();
         
-        $(idDay).val(selDay);
-        $(idMonthYear).val(selMonth+'-'+selYear);
+            $(idDay).val(selDay);
+            $(idMonthYear).val(selMonth+'-'+selYear);
+        }
     };
     $("#datepicker2" ).datepicker({
         defaultDate: "+1d",
