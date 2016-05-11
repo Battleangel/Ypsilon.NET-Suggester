@@ -21,14 +21,19 @@
             storeSelDate($(this).datepicker( 'getDate' ),'#Day','#month_1');           
         }
     });
+    var pad = function (str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+    };
+
     var storeSelDate = function(oDate,idDay,idMonthYear) {        
         if(oDate !== null && oDate !== undefined) {
             var selDay = oDate.getDate();
             var selMonth = oDate.getMonth()+1;
             var selYear  = oDate.getFullYear();
         
-            $(idDay).val(selDay);
-            $(idMonthYear).val(selMonth+'-'+selYear);
+            $(idDay).val(pad(selDay,2));
+            $(idMonthYear).val(pad(selMonth,2)+'-'+selYear);
         }
     };
     $("#datepicker2" ).datepicker({

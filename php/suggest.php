@@ -1,6 +1,6 @@
 <?php
 
-$bEnableAPC = true; // disable APC cache global
+$bEnableAPC = false; // disable APC cache global
 
 // Cleanup GET Variable to prevent Xsite Scripting
 $locales = filter_input(INPUT_GET,'locales',FILTER_SANITIZE_STRING);
@@ -20,7 +20,7 @@ if($bEnableAPC) {
 }
 
 // Get JSON Results from Ypsilon.NET GEO Database
-$res = file_get_contents('http://flweb.ypsilon.net/suggest.php?filterGeoRailway=1&locales='.$locales.'&term='.$term);
+$res = file_get_contents('http://fl-daniel.dev.ypsilon.net/suggest.php?is_airport=1&filterGeoRailway=1&locales='.$locales.'&term='.$term);
 echo $res;
 
 flush();
