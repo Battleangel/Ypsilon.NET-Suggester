@@ -1,13 +1,13 @@
 <?php
 
-$bEnableAPC = false; // disable APC cache global
+$bEnableAPC = true; // disable APC cache global
 
 // Cleanup GET Variable to prevent Xsite Scripting
 $locales = filter_input(INPUT_GET,'locales',FILTER_SANITIZE_STRING);
 $term =  filter_input(INPUT_GET,'term',FILTER_SANITIZE_STRING);
 
 // index use for APC Cache
-$sApcIdx = 'yps_suggest_'.$locales.'_'.$term;
+$sApcIdx = 'yps_suggest_is_airport_'.$locales.'_'.$term;
 if($bEnableAPC) {
     if(function_exists('apc_fetch')) {   // Read from APC Cache if enabled
         $success = false;    
