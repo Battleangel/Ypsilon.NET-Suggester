@@ -96,6 +96,12 @@
 
             $('#subButton').click(function() {                
                 
+                if($('#depApt_hidden').val() == '') {
+                    $('#depApt_hidden').val($('#depApt').val());
+                }
+                if($('#dstApt_hidden').val() == '') {
+                    $('#dstApt_hidden').val($('#dstApt').val());
+                }
                  $('#myForm').attr('target','fl3');                 
                  $('#myForm').attr('action','http://flweb.ypsilon.net/index.phtml/fluegecomama');
                  $('#myForm').submit();
