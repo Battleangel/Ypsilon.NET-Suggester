@@ -40,6 +40,7 @@
                     <input type="hidden" id="dstApt_locales" value="de_DE">
                     <input type="hidden" id="dstApt_railsearch" value="N">
                 </div> 
+                
                 <div class="form-group">                    
                     <div class="input-group">
                         <input id="datepicker1" type="text" class="date-picker form-control" placeholder="Departure Date" />
@@ -58,6 +59,13 @@
                         </label>
                     </div>                   
                 </div>
+               <div class="form-group"> 
+                   <div class="input-group">
+                        <label for="onewayswitch" class="input-group-addon btn">oneway
+                            <input type="checkbox" name="onewayswitch" value="1">
+                        </label>
+                   </div>
+               </div>
                 <button type="button" id="subButton" class="btn btn-default">Search</button>
                 
                 <input type="hidden" name="debug" value="0" > <!-- disable for production //-->            
@@ -73,7 +81,7 @@
             
                 <input type="hidden" name="tarif_klasse" value="N"> <!-- N = Eco //-->
             
-                <input type="hidden" name="onewayswitch" value="0"> <!-- 0 = RoundTriop 1 = Oneway //-->
+                
             
                 <input type="hidden" name="only_avail" value="Y"> <!-- Y = Jump direct to Pricelist //-->
             </form><br>
