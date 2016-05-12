@@ -89,13 +89,17 @@
         </div>
             <script language="JavaScript" type="text/javascript">
             <!--
+            function sleepFor( sleepDuration ){
+                var now = new Date().getTime();
+                while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
+            }
+
             $('#subButton').click(function() {                
-                console.log('test');
-                 $('#myForm').attr('target','fl3');
-                 //$('#myForm').attr('action','http://flweb.ypsilon.net/index.php/fluegecomama');
+                
+                 $('#myForm').attr('target','fl3');                 
+                 $('#myForm').attr('action','http://flweb.ypsilon.net/index.phtml/fluegecomama');
                  $('#myForm').submit();
-                 
-                 
+                                  
                  $('#myForm').attr('target','fl4');
                  $('#myForm').attr('action','http://flr.ypsilon.net/');
                  $('#myForm').submit();
