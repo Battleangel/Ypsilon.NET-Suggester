@@ -8,7 +8,7 @@ $term =  filter_input(INPUT_GET,'term',FILTER_SANITIZE_STRING);
 
 // index use for APC Cache
 $sApcIdx = 'yps_suggest_is_airport_'.$locales.'_'.$term;
-if($bEnableAPC) {
+if(false && $bEnableAPC) {
     if(function_exists('apc_fetch')) {   // Read from APC Cache if enabled
         $success = false;    
         $res = apc_fetch($sApcIdx,$success);
@@ -20,7 +20,7 @@ if($bEnableAPC) {
 }
 
 // Get JSON Results from Ypsilon.NET GEO Database
-$res = file_get_contents('http://flweb.ypsilon.net/suggest.php?is_airport=1&filterGeoRailway=1&locales='.$locales.'&term='.$term);
+$res = file_get_contents('http://flweb.ypsilon.net/suggest.php?filterGeoRailway=1&locales='.$locales.'&term='.$term);
 echo $res;
 
 flush();
