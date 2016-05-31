@@ -20,7 +20,7 @@ if(false && $bEnableAPC) {
 }
 
 // Get JSON Results from Ypsilon.NET GEO Database
-$res = file_get_contents('http://flweb.ypsilon.net/suggest.php?filterGeoRailway=1&locales='.$locales.'&term='.$term);
+$res = file_get_contents('http://flweb.ypsilon.net/suggest.php?is_airport=1&filterGeoRailway=1&locales='.$locales.'&term='.$term);
 echo $res;
 
 flush();
