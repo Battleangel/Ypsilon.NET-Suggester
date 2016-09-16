@@ -19,8 +19,11 @@ if(false && $bEnableAPC) {
     }
 }
 
-// Get JSON Results from Ypsilon.NET GEO Database
+// Get JSON Results from Ypsilon.NET GEO Database 
 $res = file_get_contents('http://flweb.ypsilon.net/suggest.php?is_airport=1&filterGeoRailway=1&locales='.$locales.'&term='.$term);
+/*echo "<pre>";
+print_r(json_decode($res,true));
+echo "</pre>";    */
 echo $res;
 
 flush();
@@ -29,5 +32,4 @@ if($bEnableAPC) { // Store into APC Cache if Enabled
         apc_store($sApcIdx,$res,3600);
     }
 }
-
 ?>
